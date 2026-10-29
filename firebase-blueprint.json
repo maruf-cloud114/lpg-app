@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "PriceConfig": {
+      "title": "PriceConfig",
+      "description": "Live LPG refill prices, WhatsApp dispatch number, and customer hotline.",
+      "type": "object",
+      "properties": {
+        "price12kg": {
+          "type": "number",
+          "description": "Price for 12kg cylinder in BDT"
+        },
+        "price35kg": {
+          "type": "number",
+          "description": "Price for 35kg cylinder in BDT"
+        },
+        "price45kg": {
+          "type": "number",
+          "description": "Price for 45kg cylinder in BDT"
+        },
+        "whatsappNumber": {
+          "type": "string",
+          "description": "WhatsApp dispatch phone number"
+        },
+        "hotlinePhone": {
+          "type": "string",
+          "description": "Direct customer delivery hotline"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "description": "Timestamp string of last price update"
+        }
+      },
+      "required": ["price12kg", "price35kg", "price45kg", "whatsappNumber", "hotlinePhone"]
+    }
+  },
+  "firestore": {
+    "/config/prices": {
+      "schema": "PriceConfig",
+      "description": "Live prices and contact information synchronized across all customer devices."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /config/prices {
+      allow read: if true;
+      allow write: if request.resource.data.price12kg is number &&
+                      request.resource.data.price12kg > 0 &&
+                      request.resource.data.price35kg is number &&
+                      request.resource.data.price35kg > 0 &&
+                      request.resource.data.price45kg is number &&
+                      request.resource.data.price45kg > 0 &&
+                      request.resource.data.whatsappNumber is string &&
+                      request.resource.data.hotlinePhone is string;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "QuickGas LPG",
+  "description": "Minimalistic LPG cylinder refill and ordering app with instant WhatsApp dispatch, bilingual Bangla/English support, and business pricing manager.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
